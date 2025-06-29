@@ -6,9 +6,11 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import AnimatedBackground from './components/AnimatedBackground';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [language, setLanguage] = useState('english'); // 'english' or 'hindi'
 
   useEffect(() => {
     // Check for saved theme preference or default to light mode
@@ -33,21 +35,31 @@ function App() {
     setDarkMode(!darkMode);
   };
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'english' ? 'hindi' : 'english');
+  };
+
   return (
     <div className={`min-h-screen transition-colors duration-300 ${
       darkMode 
         ? 'bg-gray-900 text-white' 
         : 'bg-gray-50 text-gray-900'
     }`}>
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <AnimatedBackground darkMode={darkMode} />
+      <Header 
+        darkMode={darkMode} 
+        toggleDarkMode={toggleDarkMode}
+        language={language}
+        toggleLanguage={toggleLanguage}
+      />
       <main>
-        <Hero darkMode={darkMode} />
-        <About darkMode={darkMode} />
-        <Skills darkMode={darkMode} />
-        <Projects darkMode={darkMode} />
-        <Contact darkMode={darkMode} />
+        <Hero darkMode={darkMode} language={language} />
+        <About darkMode={darkMode} language={language} />
+        <Skills darkMode={darkMode} language={language} />
+        <Projects darkMode={darkMode} language={language} />
+        <Contact darkMode={darkMode} language={language} />
       </main>
-      <Footer darkMode={darkMode} />
+      <Footer darkMode={darkMode} language={language} />
     </div>
   );
 }
