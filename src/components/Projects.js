@@ -113,17 +113,17 @@ const Projects = ({ darkMode }) => {
     <section id="projects" className="section-padding gradient-bg">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <div className="inline-flex items-center space-x-2 mb-4">
             <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
-            <span className={`text-lg font-medium ${
+            <span className={`text-responsive-sm font-medium ${
               darkMode ? 'text-blue-400' : 'text-blue-600'
             }`}>
               My Work
             </span>
           </div>
           
-          <h2 className={`text-4xl md:text-6xl font-bold mb-6 ${
+          <h2 className={`text-responsive-3xl font-bold mb-4 sm:mb-6 ${
             darkMode ? 'text-white' : 'text-gray-900'
           }`}>
             Featured{' '}
@@ -132,9 +132,9 @@ const Projects = ({ darkMode }) => {
             </span>
           </h2>
           
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-8"></div>
+          <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-6 sm:mb-8"></div>
           
-          <p className={`text-xl max-w-3xl mx-auto leading-relaxed ${
+          <p className={`text-responsive-base max-w-3xl mx-auto leading-relaxed ${
             darkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
             Here are some of the projects I've worked on. Each project represents 
@@ -143,12 +143,12 @@ const Projects = ({ darkMode }) => {
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
           {filters.map((filter) => (
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 hover:scale-105 focus-ring ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-2xl text-responsive-xs font-semibold transition-all duration-300 hover:scale-105 focus-ring ${
                 activeFilter === filter.id
                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-2xl shadow-blue-500/25'
                   : darkMode
@@ -157,7 +157,7 @@ const Projects = ({ darkMode }) => {
               }`}
             >
               {filter.label}
-              <span className={`ml-2 px-2 py-1 rounded-full text-xs ${
+              <span className={`ml-2 px-2 py-1 rounded-full text-responsive-xs ${
                 activeFilter === filter.id
                   ? 'bg-white/20'
                   : darkMode ? 'bg-gray-700/50' : 'bg-gray-200/50'
@@ -169,7 +169,7 @@ const Projects = ({ darkMode }) => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid-responsive">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
@@ -183,7 +183,7 @@ const Projects = ({ darkMode }) => {
               onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Project Image */}
-              <div className={`relative h-48 flex items-center justify-center text-6xl transition-all duration-500 group-hover:scale-110 ${
+              <div className={`relative h-40 sm:h-48 flex items-center justify-center text-4xl sm:text-5xl md:text-6xl transition-all duration-500 group-hover:scale-110 ${
                 darkMode ? 'bg-gray-900/50' : 'bg-gray-100/50'
               }`}>
                 <div className="relative z-10">{project.image}</div>
@@ -193,8 +193,8 @@ const Projects = ({ darkMode }) => {
                 
                 {/* Featured Badge */}
                 {project.featured && (
-                  <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 text-xs font-bold rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white animate-pulse">
+                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4">
+                    <span className="px-2 sm:px-3 py-1 text-responsive-xs font-bold rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white animate-pulse">
                       ⭐ Featured
                     </span>
                   </div>
@@ -202,68 +202,75 @@ const Projects = ({ darkMode }) => {
               </div>
 
               {/* Project Content */}
-              <div className="p-6 space-y-4">
-                {/* Title and Badges */}
-                <div className="space-y-3">
-                  <h3 className={`text-xl font-bold ${
+              <div className="p-responsive-base">
+                {/* Project Header */}
+                <div className="mb-4">
+                  <h3 className={`text-responsive-lg font-bold mb-2 ${
                     darkMode ? 'text-white' : 'text-gray-900'
-                  } group-hover:gradient-text transition-all duration-300`}>
+                  }`}>
                     {project.title}
                   </h3>
-                  
-                  {/* Project Badges */}
-                  <div className="flex flex-wrap gap-2">
-                    <span className={`px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r ${getDifficultyColor(project.difficulty)} text-white`}>
-                      {project.difficulty}
-                    </span>
-                    <span className={`px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r ${getImpactColor(project.impact)} text-white`}>
-                      {project.impact}
-                    </span>
-                    <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                      darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-200 text-gray-700'
-                    }`}>
-                      {project.duration}
-                    </span>
+                  <p className={`text-responsive-sm leading-relaxed ${
+                    darkMode ? 'text-gray-300' : 'text-gray-600'
+                  }`}>
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Project Tags */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className={`px-2 py-1 text-responsive-xs rounded-full bg-gradient-to-r ${getDifficultyColor(project.difficulty)} text-white font-semibold`}>
+                    {project.difficulty}
+                  </span>
+                  <span className={`px-2 py-1 text-responsive-xs rounded-full bg-gradient-to-r ${getImpactColor(project.impact)} text-white font-semibold`}>
+                    {project.impact}
+                  </span>
+                  <span className={`px-2 py-1 text-responsive-xs rounded-full ${
+                    darkMode ? 'bg-gray-700/50 text-gray-300' : 'bg-gray-100/50 text-gray-700'
+                  }`}>
+                    {project.duration}
+                  </span>
+                </div>
+
+                {/* Technologies */}
+                <div className="mb-4">
+                  <h4 className={`text-responsive-sm font-semibold mb-2 ${
+                    darkMode ? 'text-blue-400' : 'text-blue-600'
+                  }`}>
+                    Technologies Used:
+                  </h4>
+                  <div className="flex flex-wrap gap-1 sm:gap-2">
+                    {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className={`px-2 py-1 text-responsive-xs rounded-full ${
+                          darkMode 
+                            ? 'bg-gray-700/50 text-gray-300' 
+                            : 'bg-gray-100/50 text-gray-700'
+                        }`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 4 && (
+                      <span className={`px-2 py-1 text-responsive-xs rounded-full ${
+                        darkMode 
+                          ? 'bg-gray-700/50 text-gray-300' 
+                          : 'bg-gray-100/50 text-gray-700'
+                      }`}>
+                        +{project.technologies.length - 4} more
+                      </span>
+                    )}
                   </div>
                 </div>
 
-                {/* Description */}
-                <p className={`text-sm leading-relaxed ${
-                  darkMode ? 'text-gray-300' : 'text-gray-600'
-                }`}>
-                  {hoveredProject === project.id ? project.longDescription : project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.slice(0, 4).map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className={`px-3 py-1 text-xs font-medium rounded-full transition-all duration-300 hover:scale-105 ${
-                        darkMode 
-                          ? 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/50' 
-                          : 'bg-gray-100/50 text-gray-700 hover:bg-gray-200/50'
-                      }`}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.technologies.length > 4 && (
-                    <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                      darkMode ? 'bg-gray-700/50 text-gray-400' : 'bg-gray-100/50 text-gray-500'
-                    }`}>
-                      +{project.technologies.length - 4} more
-                    </span>
-                  )}
-                </div>
-
-                {/* Project Links */}
-                <div className="flex gap-3 pt-2">
+                {/* Project Actions */}
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary text-sm px-4 py-2 flex-1 text-center group/link"
+                    className="flex-1 btn-primary text-center group"
                   >
                     <span className="flex items-center justify-center space-x-2">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

@@ -57,17 +57,17 @@ const About = ({ darkMode }) => {
     <section id="about" className="section-padding gradient-bg">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <div className="inline-flex items-center space-x-2 mb-4">
             <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
-            <span className={`text-lg font-medium ${
+            <span className={`text-responsive-sm font-medium ${
               darkMode ? 'text-blue-400' : 'text-blue-600'
             }`}>
               My Story
             </span>
           </div>
           
-          <h2 className={`text-4xl md:text-6xl font-bold mb-6 ${
+          <h2 className={`text-responsive-3xl font-bold mb-4 sm:mb-6 ${
             darkMode ? 'text-white' : 'text-gray-900'
           }`}>
             About{' '}
@@ -76,9 +76,9 @@ const About = ({ darkMode }) => {
             </span>
           </h2>
           
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-8"></div>
+          <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-6 sm:mb-8"></div>
           
-          <p className={`text-xl max-w-3xl mx-auto leading-relaxed ${
+          <p className={`text-responsive-base max-w-3xl mx-auto leading-relaxed ${
             darkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
             A passionate Computer Science graduate with expertise in full-stack development and machine learning. 
@@ -86,12 +86,12 @@ const About = ({ darkMode }) => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid-responsive-2 gap-8 md:gap-12 lg:gap-16 items-start">
           {/* Left Column - Image & Personal Info */}
-          <div className="space-y-8">
+          <div className="space-responsive-base">
             {/* Profile Image */}
             <div className="flex justify-center lg:justify-start">
-              <div className={`relative w-80 h-80 rounded-3xl overflow-hidden shadow-2xl ${
+              <div className={`relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden shadow-2xl ${
                 darkMode ? 'bg-gray-800' : 'bg-gray-100'
               }`}>
                 <img
@@ -107,10 +107,10 @@ const About = ({ darkMode }) => {
             </div>
 
             {/* Personal Details */}
-            <div className={`p-6 rounded-2xl glass-effect ${
+            <div className={`p-responsive-base rounded-2xl glass-effect ${
               darkMode ? 'bg-gray-800/30' : 'bg-white/30'
             }`}>
-              <h3 className={`text-xl font-bold mb-4 ${
+              <h3 className={`text-responsive-lg font-bold mb-4 ${
                 darkMode ? 'text-white' : 'text-gray-900'
               }`}>
                 Personal Information
@@ -118,25 +118,25 @@ const About = ({ darkMode }) => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                  <span className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <span className={`text-responsive-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                     <strong>Name:</strong> Rishab Thapliyal
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                  <span className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <span className={`text-responsive-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                     <strong>Email:</strong> rishabthapliyal04@gmail.com
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                  <span className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <span className={`text-responsive-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                     <strong>Phone:</strong> +91 84490 12345
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                  <span className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <span className={`text-responsive-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                     <strong>Location:</strong> Dehradun, Uttarakhand, India
                   </span>
                 </div>
@@ -145,17 +145,17 @@ const About = ({ darkMode }) => {
           </div>
 
           {/* Right Column - Content */}
-          <div className="space-y-8">
+          <div className="space-responsive-base">
             {/* Introduction */}
-            <div className={`p-6 rounded-2xl glass-effect ${
+            <div className={`p-responsive-base rounded-2xl glass-effect ${
               darkMode ? 'bg-gray-800/30' : 'bg-white/30'
             }`}>
-              <h3 className={`text-2xl font-bold mb-4 ${
+              <h3 className={`text-responsive-xl font-bold mb-4 ${
                 darkMode ? 'text-white' : 'text-gray-900'
               }`}>
                 Software Engineer & Full Stack Developer
               </h3>
-              <p className={`text-lg leading-relaxed ${
+              <p className={`text-responsive-base leading-relaxed ${
                 darkMode ? 'text-gray-300' : 'text-gray-600'
               }`}>
                 I'm a passionate Computer Science graduate with a strong foundation in software development 
@@ -165,18 +165,18 @@ const About = ({ darkMode }) => {
             </div>
 
             {/* Key Skills */}
-            <div className={`p-6 rounded-2xl glass-effect ${
+            <div className={`p-responsive-base rounded-2xl glass-effect ${
               darkMode ? 'bg-gray-800/30' : 'bg-white/30'
             }`}>
-              <h4 className={`text-xl font-bold mb-4 ${
+              <h4 className={`text-responsive-lg font-bold mb-4 ${
                 darkMode ? 'text-white' : 'text-gray-900'
               }`}>
                 Technical Expertise
               </h4>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {skills.map((skillGroup, index) => (
                   <div key={index} className="space-y-2">
-                    <h5 className={`font-semibold text-sm ${
+                    <h5 className={`font-semibold text-responsive-sm ${
                       darkMode ? 'text-blue-400' : 'text-blue-600'
                     }`}>
                       {skillGroup.category}
@@ -185,7 +185,7 @@ const About = ({ darkMode }) => {
                       {skillGroup.items.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className={`px-2 py-1 text-xs rounded-full ${
+                          className={`px-2 py-1 text-responsive-xs rounded-full ${
                             darkMode 
                               ? 'bg-gray-700/50 text-gray-300' 
                               : 'bg-gray-100/50 text-gray-700'
@@ -203,9 +203,9 @@ const About = ({ darkMode }) => {
         </div>
 
         {/* Education Timeline */}
-        <div className="mt-20">
-          <div className="text-center mb-16">
-            <h3 className={`text-4xl font-bold mb-6 ${
+        <div className="mt-16 sm:mt-20">
+          <div className="text-center mb-12 sm:mb-16">
+            <h3 className={`text-responsive-2xl font-bold mb-4 sm:mb-6 ${
               darkMode ? 'text-white' : 'text-gray-900'
             }`}>
               Educational{' '}
@@ -213,8 +213,8 @@ const About = ({ darkMode }) => {
                 Journey
               </span>
             </h3>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-8"></div>
-            <p className={`text-lg max-w-2xl mx-auto ${
+            <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-6 sm:mb-8"></div>
+            <p className={`text-responsive-base max-w-2xl mx-auto ${
               darkMode ? 'text-gray-300' : 'text-gray-600'
             }`}>
               My academic path from school to university, building a strong foundation in computer science and technology.
@@ -222,34 +222,34 @@ const About = ({ darkMode }) => {
           </div>
 
           <div className="relative">
-            {/* Enhanced Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full">
+            {/* Timeline Line - Hidden on mobile, visible on desktop */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full">
               <div className="w-full h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full shadow-lg"></div>
               <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full blur-sm opacity-30 animate-pulse"></div>
             </div>
             
-            <div className="space-y-16">
+            <div className="space-y-8 sm:space-y-12 md:space-y-16">
               {education.map((edu, index) => (
-                <div key={index} className={`relative flex items-center ${
-                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                <div key={index} className={`relative flex flex-col md:flex-row md:items-center ${
+                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}>
-                  {/* Interactive Timeline Dot */}
+                  {/* Timeline Dot - Simplified for mobile */}
                   <div 
-                    className={`absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white dark:border-gray-900 z-10 shadow-xl cursor-pointer hover:scale-125 transition-all duration-300 group/dot ${
+                    className={`relative md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white dark:border-gray-900 z-10 shadow-xl cursor-pointer hover:scale-125 transition-all duration-300 group/dot mx-auto md:mx-0 mb-4 md:mb-0 ${
                       activeCard === index ? 'ring-4 ring-yellow-400 ring-opacity-50' : ''
                     }`}
                     onClick={() => setActiveCard(activeCard === index ? null : index)}
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-ping opacity-50"></div>
-                    {/* Click indicator */}
-                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-2 py-1 rounded text-xs opacity-0 group-hover/dot:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    {/* Click indicator - Hidden on mobile */}
+                    <div className="hidden md:block absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-2 py-1 rounded text-xs opacity-0 group-hover/dot:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                       {activeCard === index ? 'Hide details' : 'Click to view'}
                     </div>
                   </div>
                   
-                  {/* Content Card with Enhanced Design */}
-                  <div className={`w-5/12 relative rounded-3xl overflow-hidden shadow-2xl group hover:shadow-3xl transition-all duration-500 ${
-                    index % 2 === 0 ? 'mr-auto' : 'ml-auto'
+                  {/* Content Card - Full width on mobile, 5/12 on desktop */}
+                  <div className={`w-full md:w-5/12 relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-2xl group hover:shadow-2xl md:hover:shadow-3xl transition-all duration-500 ${
+                    index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
                   } ${activeCard === index ? 'scale-105 ring-2 ring-yellow-400' : ''}`}>
                     
                     {/* Background Image with Subtle Fade */}
@@ -263,50 +263,46 @@ const About = ({ darkMode }) => {
                           WebkitMaskImage: 'radial-gradient(ellipse at center, black 60%, transparent 100%)'
                         }}
                       />
-                      {/* Subtle Fade Overlay - No right fade */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent"></div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-black/20"></div>
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
-                      {/* Elegant Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+                      {/* Simplified Overlay for better mobile readability */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
-                      {/* Hover Overlay - Darker for better text visibility */}
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      {/* Hover Overlay */}
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
 
                     {/* Year Badge */}
-                    <div className="absolute top-2 left-4 z-20">
-                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                    <div className="absolute top-2 left-2 sm:left-4 z-20">
+                      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
                         {edu.year}
                       </div>
                     </div>
 
                     {/* Institution Badge */}
-                    <div className="absolute top-2 right-4 z-20">
-                      <div className="bg-black/60 backdrop-blur-sm text-white px-3 py-1 rounded-lg text-xs font-medium">
+                    <div className="absolute top-2 right-2 sm:right-4 z-20">
+                      <div className="bg-black/60 backdrop-blur-sm text-white px-2 sm:px-3 py-1 rounded-lg text-xs font-medium">
                         {index === 0 ? 'University' : 'School'}
                       </div>
                     </div>
                     
-                    {/* Content */}
-                    <div className="relative z-10 p-8 text-white pt-16">
-                      <h4 className="text-2xl font-bold mb-3 text-white drop-shadow-2xl group-hover:text-white transition-colors duration-300">
+                    {/* Content - Improved mobile spacing */}
+                    <div className="relative z-10 p-4 sm:p-6 md:p-8 text-white pt-12 sm:pt-16">
+                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-white drop-shadow-2xl group-hover:text-white transition-colors duration-300 leading-tight">
                         {edu.degree}
                       </h4>
                       
-                      <div className="text-lg font-semibold mb-4 text-white drop-shadow-2xl group-hover:text-white transition-colors duration-300">
+                      <div className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white drop-shadow-2xl group-hover:text-white transition-colors duration-300 leading-tight">
                         {edu.institution}
                       </div>
                       
-                      <p className="text-sm mb-4 text-gray-100 drop-shadow-xl group-hover:text-white transition-colors duration-300 leading-relaxed">
+                      <p className="text-xs sm:text-sm mb-3 sm:mb-4 text-gray-100 drop-shadow-xl group-hover:text-white transition-colors duration-300 leading-relaxed">
                         {edu.details}
                       </p>
                       
-                      <div className="space-y-2">
+                      <div className="space-y-1 sm:space-y-2">
                         {edu.achievements.map((achievement, achievementIndex) => (
-                          <div key={achievementIndex} className="flex items-start space-x-3 text-gray-100 drop-shadow-xl group-hover:text-white transition-colors duration-300">
-                            <span className="text-green-300 mt-1 drop-shadow-2xl group-hover:text-green-200 transition-colors duration-300">✓</span>
-                            <span className="text-sm leading-relaxed">{achievement}</span>
+                          <div key={achievementIndex} className="flex items-start space-x-2 sm:space-x-3 text-gray-100 drop-shadow-xl group-hover:text-white transition-colors duration-300">
+                            <span className="text-green-300 mt-0.5 sm:mt-1 drop-shadow-2xl group-hover:text-green-200 transition-colors duration-300 flex-shrink-0">✓</span>
+                            <span className="text-xs sm:text-sm leading-relaxed">{achievement}</span>
                           </div>
                         ))}
                       </div>
@@ -319,27 +315,27 @@ const About = ({ darkMode }) => {
         </div>
 
         {/* Key Achievements */}
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <h3 className={`text-3xl font-bold mb-4 ${
+        <div className="mt-16 sm:mt-20">
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className={`text-responsive-xl font-bold mb-4 ${
               darkMode ? 'text-white' : 'text-gray-900'
             }`}>
               Key Achievements
             </h3>
-            <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+            <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className={`p-4 rounded-xl glass-effect ${
+                className={`p-responsive-base rounded-xl glass-effect ${
                   darkMode ? 'bg-gray-800/30' : 'bg-white/30'
                 } hover:scale-105 transition-all duration-300`}
               >
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className={`text-sm ${
+                  <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                  <p className={`text-responsive-sm ${
                     darkMode ? 'text-gray-300' : 'text-gray-600'
                   }`}>
                     {achievement}
@@ -351,20 +347,20 @@ const About = ({ darkMode }) => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-16 sm:mt-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className={`text-center p-6 rounded-2xl glass-effect transition-all duration-300 hover:scale-105 ${
+                className={`text-center p-responsive-base rounded-2xl glass-effect transition-all duration-300 hover:scale-105 ${
                   darkMode ? 'bg-gray-800/30' : 'bg-white/30'
                 }`}
               >
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className={`text-2xl md:text-3xl font-bold mb-2 gradient-text`}>
+                <div className="text-2xl sm:text-3xl mb-2">{stat.icon}</div>
+                <div className={`text-xl sm:text-2xl md:text-3xl font-bold mb-2 gradient-text`}>
                   {stat.value}
                 </div>
-                <div className={`text-sm font-medium ${
+                <div className={`text-responsive-xs font-medium ${
                   darkMode ? 'text-gray-400' : 'text-gray-600'
                 }`}>
                   {stat.label}

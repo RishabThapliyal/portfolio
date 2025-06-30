@@ -40,16 +40,16 @@ const Skills = ({ darkMode }) => {
   return (
     <section id="skills" className="section-padding">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className={`text-responsive-2xl font-bold mb-4 ${
             darkMode ? 'text-white' : 'text-gray-900'
           }`}>
             Skills & Technologies
           </h2>
-          <div className={`w-24 h-1 bg-primary-600 mx-auto rounded-full ${
+          <div className={`w-16 sm:w-20 md:w-24 h-1 bg-primary-600 mx-auto rounded-full ${
             darkMode ? 'bg-primary-400' : 'bg-primary-600'
           }`}></div>
-          <p className={`text-lg mt-6 max-w-2xl mx-auto ${
+          <p className={`text-responsive-base mt-6 max-w-2xl mx-auto ${
             darkMode ? 'text-gray-300' : 'text-gray-600'
           }`}>
             I work with a variety of technologies to create amazing web experiences. 
@@ -57,28 +57,28 @@ const Skills = ({ darkMode }) => {
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
           {skillCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="animate-slide-up" style={{ animationDelay: `${categoryIndex * 0.2}s` }}>
-              <h3 className={`text-2xl font-semibold mb-8 text-center ${
+              <h3 className={`text-responsive-xl font-semibold mb-6 sm:mb-8 text-center ${
                 darkMode ? 'text-white' : 'text-gray-900'
               }`}>
                 {category.category}
               </h3>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={skillIndex}
-                    className={`p-6 rounded-xl transition-all duration-500 hover:scale-105 hover:rotate-1 ${
+                    className={`p-responsive-base rounded-xl transition-all duration-500 hover:scale-105 hover:rotate-1 ${
                       darkMode 
                         ? 'bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-primary-500' 
                         : 'bg-white hover:bg-gray-50 shadow-lg hover:shadow-xl border border-gray-200 hover:border-primary-500'
                     }`}
                     style={{ animationDelay: `${(categoryIndex * 0.2) + (skillIndex * 0.1)}s` }}
                   >
-                    <div className="flex items-center mb-4">
-                      <span className="text-2xl mr-3 animate-pulse">{skill.icon}</span>
-                      <h4 className={`text-lg font-semibold ${
+                    <div className="flex items-center mb-3 sm:mb-4">
+                      <span className="text-xl sm:text-2xl mr-2 sm:mr-3 animate-pulse">{skill.icon}</span>
+                      <h4 className={`text-responsive-base font-semibold ${
                         darkMode ? 'text-white' : 'text-gray-900'
                       }`}>
                         {skill.name}
@@ -86,7 +86,7 @@ const Skills = ({ darkMode }) => {
                     </div>
                     
                     <div className="mb-2">
-                      <div className="flex justify-between text-sm mb-1">
+                      <div className="flex justify-between text-responsive-xs mb-1">
                         <span className={darkMode ? 'text-gray-400' : 'text-gray-600'}>
                           Proficiency
                         </span>
@@ -116,13 +116,13 @@ const Skills = ({ darkMode }) => {
         </div>
 
         {/* Additional Skills */}
-        <div className="mt-16 animate-slide-up">
-          <h3 className={`text-2xl font-semibold mb-8 text-center ${
+        <div className="mt-12 sm:mt-16 animate-slide-up">
+          <h3 className={`text-responsive-xl font-semibold mb-6 sm:mb-8 text-center ${
             darkMode ? 'text-white' : 'text-gray-900'
           }`}>
             Other Skills & Competencies
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             {[
               'Problem Solving', 'Data Structures', 'Algorithms', 'Object-Oriented Programming',
               'Database Design', 'API Integration', 'Version Control', 'Debugging',
@@ -131,7 +131,7 @@ const Skills = ({ darkMode }) => {
             ].map((skill, index) => (
               <span
                 key={index}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-110 ${
+                className={`px-3 sm:px-4 py-2 rounded-full text-responsive-xs font-medium transition-all duration-300 hover:scale-110 ${
                   darkMode 
                     ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white hover:shadow-lg' 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900 hover:shadow-lg'

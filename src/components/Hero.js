@@ -62,7 +62,7 @@ const Hero = ({ darkMode, language }) => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28">
       {/* Animated Background */}
       <div className="absolute inset-0 gradient-bg">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-pink-600/10 animate-gradient"></div>
@@ -86,20 +86,20 @@ const Hero = ({ darkMode, language }) => {
         </div>
 
         {/* Geometric Shapes */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-pink-500/20 to-blue-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-10 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/4 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-gradient-to-br from-pink-500/20 to-blue-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
-          <div className="space-y-8 animate-slide-up">
-            <div className="space-y-6">
+          <div className="space-responsive-base animate-slide-up text-center lg:text-left">
+            <div className="space-responsive-sm">
               {/* Greeting */}
-              <div className="flex items-center space-x-3 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <div className="flex items-center justify-center lg:justify-start space-x-3 animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
-                <span className={`text-lg font-medium ${
+                <span className={`text-responsive-sm font-medium ${
                   darkMode ? 'text-blue-400' : 'text-blue-600'
                 }`}>
                   {t.welcome}
@@ -107,8 +107,8 @@ const Hero = ({ darkMode, language }) => {
               </div>
 
               {/* Main Heading */}
-              <div className="space-y-6">
-                <h1 className={`text-5xl md:text-7xl font-bold leading-tight ${
+              <div className="space-responsive-sm">
+                <h1 className={`text-responsive-4xl font-bold leading-tight ${
                   darkMode ? 'text-white' : 'text-gray-900'
                 }`}>
                   {t.greeting}{' '}
@@ -118,14 +118,14 @@ const Hero = ({ darkMode, language }) => {
                 </h1>
                 
                 {/* Animated Role */}
-                <div className="h-20 flex items-center">
-                  <h2 className={`text-2xl md:text-3xl font-semibold ${
+                <div className="h-16 sm:h-20 flex items-center justify-center lg:justify-start">
+                  <h2 className={`text-responsive-lg font-semibold ${
                     darkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}>
                     {language === 'english' ? "I'm a " : "मैं एक "}
                     <span className={`bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent font-bold inline-block ${
                       isTyping ? 'typing-animation' : ''
-                    }`} style={{ minWidth: '300px' }}>
+                    }`} style={{ minWidth: '200px', sm: '250px', md: '300px' }}>
                       {currentText}
                       {isTyping && <span className="animate-pulse">|</span>}
                     </span>
@@ -135,55 +135,55 @@ const Hero = ({ darkMode, language }) => {
             </div>
             
             {/* Description */}
-            <p className={`text-xl leading-relaxed max-w-2xl ${
+            <p className={`text-responsive-base leading-relaxed max-w-2xl mx-auto lg:mx-0 ${
               darkMode ? 'text-gray-300' : 'text-gray-600'
             } animate-slide-up`} style={{ animationDelay: '0.4s' }}>
               {t.description}
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 py-6 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-              <div className={`text-center p-4 rounded-2xl glass-effect ${
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 py-4 sm:py-6 animate-slide-up" style={{ animationDelay: '0.6s' }}>
+              <div className={`text-center p-responsive-sm rounded-2xl glass-effect ${
                 darkMode ? 'bg-gray-800/50' : 'bg-white/50'
               }`}>
-                <div className="text-2xl font-bold gradient-text">10+</div>
-                <div className={`text-sm ${
+                <div className="text-responsive-lg font-bold gradient-text">10+</div>
+                <div className={`text-responsive-xs ${
                   darkMode ? 'text-gray-300' : 'text-gray-600'
                 }`}>{t.projects}</div>
               </div>
-              <div className={`text-center p-4 rounded-2xl glass-effect ${
+              <div className={`text-center p-responsive-sm rounded-2xl glass-effect ${
                 darkMode ? 'bg-gray-800/50' : 'bg-white/50'
               }`}>
-                <div className="text-2xl font-bold gradient-text">15+</div>
-                <div className={`text-sm ${
+                <div className="text-responsive-lg font-bold gradient-text">15+</div>
+                <div className={`text-responsive-xs ${
                   darkMode ? 'text-gray-300' : 'text-gray-600'
                 }`}>{t.technologies}</div>
               </div>
-              <div className={`text-center p-4 rounded-2xl glass-effect ${
+              <div className={`text-center p-responsive-sm rounded-2xl glass-effect ${
                 darkMode ? 'bg-gray-800/50' : 'bg-white/50'
               }`}>
-                <div className="text-2xl font-bold gradient-text">100%</div>
-                <div className={`text-sm ${
+                <div className="text-responsive-lg font-bold gradient-text">100%</div>
+                <div className={`text-responsive-xs ${
                   darkMode ? 'text-gray-300' : 'text-gray-600'
                 }`}>{t.dedication}</div>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '0.8s' }}>
+            <div className="flex-responsive-col justify-center lg:justify-start animate-slide-up" style={{ animationDelay: '0.8s' }}>
               <button
                 onClick={scrollToContact}
-                className="btn-primary text-lg px-8 py-4 group relative overflow-hidden"
+                className="btn-primary group relative overflow-hidden"
               >
                 <span className="relative z-10">{t.getInTouch}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </button>
               <button
                 onClick={downloadResume}
-                className="btn-outline text-lg px-8 py-4 group"
+                className="btn-outline group"
               >
-                <span className="flex items-center space-x-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="flex items-center justify-center space-x-2">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                   <span>{t.downloadResume}</span>
@@ -192,17 +192,17 @@ const Hero = ({ darkMode, language }) => {
             </div>
 
             {/* Social Links */}
-            <div className="flex space-x-4 animate-slide-up" style={{ animationDelay: '1s' }}>
+            <div className="flex justify-center lg:justify-start space-x-3 sm:space-x-4 animate-slide-up" style={{ animationDelay: '1s' }}>
               <a
                 href="https://github.com/rishabthapliyal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-4 rounded-2xl transition-all duration-300 hover:scale-110 hover:rotate-3 glass-effect ${
+                className={`p-3 sm:p-4 rounded-2xl transition-all duration-300 hover:scale-110 hover:rotate-3 glass-effect ${
                   darkMode ? 'bg-gray-800/50 hover:bg-gray-700/50' : 'bg-white/50 hover:bg-gray-100/50'
                 }`}
                 aria-label="GitHub"
               >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
               </a>
@@ -210,23 +210,23 @@ const Hero = ({ darkMode, language }) => {
                 href="https://linkedin.com/in/rishabthapliyal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-4 rounded-2xl transition-all duration-300 hover:scale-110 hover:rotate-3 glass-effect ${
+                className={`p-3 sm:p-4 rounded-2xl transition-all duration-300 hover:scale-110 hover:rotate-3 glass-effect ${
                   darkMode ? 'bg-gray-800/50 hover:bg-gray-700/50' : 'bg-white/50 hover:bg-gray-100/50'
                 }`}
                 aria-label="LinkedIn"
               >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
               </a>
               <a
                 href="mailto:rishabthapliyal04@gmail.com"
-                className={`p-4 rounded-2xl transition-all duration-300 hover:scale-110 hover:rotate-3 glass-effect ${
+                className={`p-3 sm:p-4 rounded-2xl transition-all duration-300 hover:scale-110 hover:rotate-3 glass-effect ${
                   darkMode ? 'bg-gray-800/50 hover:bg-gray-700/50' : 'bg-white/50 hover:bg-gray-100/50'
                 }`}
                 aria-label="Email"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </a>
@@ -234,10 +234,10 @@ const Hero = ({ darkMode, language }) => {
           </div>
 
           {/* Right Column - Visual Element */}
-          <div className="flex justify-center lg:justify-end animate-slide-in-right -mt-16">
+          <div className="flex justify-center lg:justify-end animate-slide-in-right -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-16">
             <div className="relative group">
               {/* Main Circle */}
-              <div className={`relative w-96 h-96 rounded-full ${
+              <div className={`relative circle-responsive-base rounded-full ${
                 darkMode 
                   ? 'bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600' 
                   : 'bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500'
@@ -273,13 +273,13 @@ const Hero = ({ darkMode, language }) => {
                 </div>
                 
                 {/* Inner Circle */}
-                <div className={`relative w-80 h-80 rounded-full ${
+                <div className={`relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full ${
                   darkMode ? 'bg-gray-900' : 'bg-white'
                 } flex items-center justify-center shadow-inner transition-all duration-1000 group-hover:shadow-[inset_0_0_30px_rgba(59,130,246,0.3)] group-hover:scale-105`}>
                   
                   {/* Profile Image Placeholder */}
                   <div className="text-center transition-all duration-1000 group-hover:scale-110">
-                    <div className={`text-8xl font-bold animate-bounce-slow transition-all duration-1000 group-hover:animate-spin group-hover:text-9xl ${
+                    <div className={`text-6xl sm:text-7xl md:text-8xl font-bold animate-bounce-slow transition-all duration-1000 group-hover:animate-spin group-hover:text-7xl sm:group-hover:text-8xl md:group-hover:text-9xl ${
                       darkMode ? 'text-white group-hover:text-blue-300' : 'text-gray-900 group-hover:text-blue-600'
                     }`} style={{ animationDuration: '4s' }}>
                       👨‍💻
@@ -287,12 +287,12 @@ const Hero = ({ darkMode, language }) => {
                     
                     {/* Hover Text Reveal */}
                     <div className="overflow-hidden">
-                      <p className={`text-lg mt-4 font-semibold transition-all duration-1000 transform ${
+                      <p className={`text-sm sm:text-base md:text-lg mt-2 sm:mt-4 font-semibold transition-all duration-1000 transform ${
                         darkMode ? 'text-gray-300' : 'text-gray-600'
                       } group-hover:translate-y-0 translate-y-4 group-hover:opacity-100 opacity-0`} style={{ transitionDelay: '0.5s' }}>
                         {t.readyToBuild}
                       </p>
-                      <p className={`text-sm mt-2 transition-all duration-1000 transform ${
+                      <p className={`text-xs sm:text-sm mt-1 sm:mt-2 transition-all duration-1000 transform ${
                         darkMode ? 'text-gray-400' : 'text-gray-500'
                       } group-hover:translate-y-0 translate-y-4 group-hover:opacity-100 opacity-0`} style={{ transitionDelay: '1s' }}>
                         {t.amazingThings}
@@ -301,31 +301,31 @@ const Hero = ({ darkMode, language }) => {
                     
                     {/* Floating Code Symbols on Hover */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none">
-                      <div className="absolute top-4 left-4 text-blue-400 text-sm animate-bounce-slow" style={{ animationDelay: '1s', animationDuration: '3s' }}>&lt;/&gt;</div>
-                      <div className="absolute top-4 right-4 text-purple-400 text-sm animate-bounce-slow" style={{ animationDelay: '1.5s', animationDuration: '3s' }}>{'{}'}</div>
-                      <div className="absolute bottom-4 left-4 text-pink-400 text-sm animate-bounce-slow" style={{ animationDelay: '2s', animationDuration: '3s' }}>[]</div>
-                      <div className="absolute bottom-4 right-4 text-green-400 text-sm animate-bounce-slow" style={{ animationDelay: '2.5s', animationDuration: '3s' }}>()</div>
+                      <div className="absolute top-2 sm:top-4 left-2 sm:left-4 text-blue-400 text-xs sm:text-sm animate-bounce-slow" style={{ animationDelay: '1s', animationDuration: '3s' }}>&lt;/&gt;</div>
+                      <div className="absolute top-2 sm:top-4 right-2 sm:right-4 text-purple-400 text-xs sm:text-sm animate-bounce-slow" style={{ animationDelay: '1.5s', animationDuration: '3s' }}>{'{}'}</div>
+                      <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 text-pink-400 text-xs sm:text-sm animate-bounce-slow" style={{ animationDelay: '2s', animationDuration: '3s' }}>[]</div>
+                      <div className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 text-green-400 text-xs sm:text-sm animate-bounce-slow" style={{ animationDelay: '2.5s', animationDuration: '3s' }}>()</div>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Floating Elements with Enhanced Hover Effects */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full animate-float flex items-center justify-center text-2xl transition-all duration-1000 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-lg" style={{ animationDuration: '6s' }}>
+              <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full animate-float flex items-center justify-center text-lg sm:text-2xl transition-all duration-1000 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-lg" style={{ animationDuration: '6s' }}>
                 ⚡
               </div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full animate-float flex items-center justify-center text-xl transition-all duration-1000 group-hover:scale-125 group-hover:-rotate-12 group-hover:shadow-lg" style={{ animationDelay: '2s', animationDuration: '6s' }}>
+              <div className="absolute -bottom-2 sm:-bottom-4 -left-2 sm:-left-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full animate-float flex items-center justify-center text-base sm:text-xl transition-all duration-1000 group-hover:scale-125 group-hover:-rotate-12 group-hover:shadow-lg" style={{ animationDelay: '2s', animationDuration: '6s' }}>
                 🚀
               </div>
-              <div className="absolute top-1/2 -left-8 w-10 h-10 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full animate-float flex items-center justify-center text-lg transition-all duration-1000 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-lg" style={{ animationDelay: '4s', animationDuration: '6s' }}>
+              <div className="absolute top-1/2 -left-4 sm:-left-8 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full animate-float flex items-center justify-center text-sm sm:text-lg transition-all duration-1000 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-lg" style={{ animationDelay: '4s', animationDuration: '6s' }}>
                 💡
               </div>
               
               {/* Additional Hover Elements */}
-              <div className="absolute top-1/4 -right-12 w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-1000 flex items-center justify-center text-sm transform scale-0 group-hover:scale-100">
+              <div className="absolute top-1/4 -right-6 sm:-right-12 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-1000 flex items-center justify-center text-xs sm:text-sm transform scale-0 group-hover:scale-100">
                 🔥
               </div>
-              <div className="absolute bottom-1/4 -right-12 w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-1000 flex items-center justify-center text-sm transform scale-0 group-hover:scale-100" style={{ transitionDelay: '0.5s' }}>
+              <div className="absolute bottom-1/4 -right-6 sm:-right-12 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-1000 flex items-center justify-center text-xs sm:text-sm transform scale-0 group-hover:scale-100" style={{ transitionDelay: '0.5s' }}>
                 ⭐
               </div>
             </div>
@@ -334,11 +334,11 @@ const Hero = ({ darkMode, language }) => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className={`w-6 h-10 border-2 rounded-full flex justify-center ${
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className={`w-5 h-8 sm:w-6 sm:h-10 border-2 rounded-full flex justify-center ${
           darkMode ? 'border-gray-400' : 'border-gray-600'
         }`}>
-          <div className={`w-1 h-3 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full mt-2 animate-pulse`}></div>
+          <div className={`w-1 h-2 sm:h-3 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full mt-1 sm:mt-2 animate-pulse`}></div>
         </div>
       </div>
     </section>
