@@ -62,17 +62,16 @@ const Hero = ({ darkMode, language }) => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28">
-      {/* Animated Background */}
-      <div className="absolute inset-0 gradient-bg">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-pink-600/10 animate-gradient"></div>
-        
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 md:pt-32 lg:pt-36">
+      {/* Animated Background - hidden on mobile */}
+      <div className="absolute inset-0 gradient-bg hidden md:block pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-pink-600/10 animate-gradient pointer-events-none"></div>
         {/* Floating Particles */}
-        <div className="particles">
+        <div className="particles pointer-events-none">
           {[...Array(20)].map((_, i) => (
             <div
               key={i}
-              className="particle"
+              className="particle pointer-events-none"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -84,17 +83,16 @@ const Hero = ({ darkMode, language }) => {
             ></div>
           ))}
         </div>
-
         {/* Geometric Shapes */}
-        <div className="absolute top-20 left-10 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/4 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-gradient-to-br from-pink-500/20 to-blue-500/20 rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-10 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-xl animate-float pointer-events-none"></div>
+        <div className="absolute bottom-20 right-10 w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-float pointer-events-none" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/4 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-gradient-to-br from-pink-500/20 to-blue-500/20 rounded-full blur-xl animate-float pointer-events-none" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
-          <div className="space-responsive-base animate-slide-up text-center lg:text-left">
+          <div className="space-responsive-base animate-slide-up text-center lg:text-left relative z-10">
             <div className="space-responsive-sm">
               {/* Greeting */}
               <div className="flex items-center justify-center lg:justify-start space-x-3 animate-slide-up" style={{ animationDelay: '0.2s' }}>
@@ -234,7 +232,7 @@ const Hero = ({ darkMode, language }) => {
           </div>
 
           {/* Right Column - Visual Element */}
-          <div className="flex justify-center lg:justify-end animate-slide-in-right -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-16">
+          <div className="flex justify-center lg:justify-end animate-slide-in-right -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-16 pointer-events-none md:pointer-events-auto">
             <div className="relative group">
               {/* Main Circle */}
               <div className={`relative circle-responsive-base rounded-full ${
@@ -273,38 +271,40 @@ const Hero = ({ darkMode, language }) => {
                 </div>
                 
                 {/* Inner Circle */}
-                <div className={`relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full ${
-                  darkMode ? 'bg-gray-900' : 'bg-white'
-                } flex items-center justify-center shadow-inner transition-all duration-1000 group-hover:shadow-[inset_0_0_30px_rgba(59,130,246,0.3)] group-hover:scale-105`}>
-                  
+                <div className={`relative w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full flex items-center justify-center transition-all duration-1000
+                  ${darkMode ? 'bg-gray-900' : 'bg-white'}
+                  shadow-inner
+                  group-hover:shadow-[inset_0_0_30px_rgba(59,130,246,0.3)] group-hover:scale-105
+                  before:absolute before:inset-0 before:rounded-full before:z-0
+                  before:bg-gradient-to-br before:from-blue-500/20 before:via-purple-500/20 before:to-pink-500/20
+                  before:blur-md before:opacity-80 md:before:opacity-0
+                `}>
                   {/* Profile Image Placeholder */}
-                  <div className="text-center transition-all duration-1000 group-hover:scale-110">
-                    <div className={`text-6xl sm:text-7xl md:text-8xl font-bold animate-bounce-slow transition-all duration-1000 group-hover:animate-spin group-hover:text-7xl sm:group-hover:text-8xl md:group-hover:text-9xl ${
-                      darkMode ? 'text-white group-hover:text-blue-300' : 'text-gray-900 group-hover:text-blue-600'
-                    }`} style={{ animationDuration: '4s' }}>
+                  <div className="text-center transition-all duration-1000 group-hover:scale-110 relative z-10">
+                    <div className={`text-6xl sm:text-7xl md:text-8xl font-bold animate-bounce-slow transition-all duration-1000
+                      group-hover:animate-spin group-hover:text-7xl sm:group-hover:text-8xl md:group-hover:text-9xl
+                      ${darkMode ? 'text-white group-hover:text-blue-300' : 'text-gray-900 group-hover:text-blue-600'}
+                    `} style={{ animationDuration: '4s' }}>
                       👨‍💻
                     </div>
-                    
-                    {/* Hover Text Reveal */}
+                    {/* Always show text on mobile, hover reveal on desktop */}
                     <div className="overflow-hidden">
-                      <p className={`text-sm sm:text-base md:text-lg mt-2 sm:mt-4 font-semibold transition-all duration-1000 transform ${
-                        darkMode ? 'text-gray-300' : 'text-gray-600'
-                      } group-hover:translate-y-0 translate-y-4 group-hover:opacity-100 opacity-0`} style={{ transitionDelay: '0.5s' }}>
+                      <p className={`text-sm sm:text-base md:text-lg mt-2 sm:mt-4 font-semibold transition-all duration-1000 transform
+                        ${darkMode ? 'text-gray-300' : 'text-gray-600'}
+                        md:group-hover:translate-y-0 md:group-hover:opacity-100
+                        md:translate-y-4 md:opacity-0
+                        translate-y-0 opacity-100
+                      `} style={{ transitionDelay: '0.5s' }}>
                         {t.readyToBuild}
                       </p>
-                      <p className={`text-xs sm:text-sm mt-1 sm:mt-2 transition-all duration-1000 transform ${
-                        darkMode ? 'text-gray-400' : 'text-gray-500'
-                      } group-hover:translate-y-0 translate-y-4 group-hover:opacity-100 opacity-0`} style={{ transitionDelay: '1s' }}>
+                      <p className={`text-xs sm:text-sm mt-1 sm:mt-2 transition-all duration-1000 transform
+                        ${darkMode ? 'text-gray-400' : 'text-gray-500'}
+                        md:group-hover:translate-y-0 md:group-hover:opacity-100
+                        md:translate-y-4 md:opacity-0
+                        translate-y-0 opacity-100
+                      `} style={{ transitionDelay: '1s' }}>
                         {t.amazingThings}
                       </p>
-                    </div>
-                    
-                    {/* Floating Code Symbols on Hover */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none">
-                      <div className="absolute top-2 sm:top-4 left-2 sm:left-4 text-blue-400 text-xs sm:text-sm animate-bounce-slow" style={{ animationDelay: '1s', animationDuration: '3s' }}>&lt;/&gt;</div>
-                      <div className="absolute top-2 sm:top-4 right-2 sm:right-4 text-purple-400 text-xs sm:text-sm animate-bounce-slow" style={{ animationDelay: '1.5s', animationDuration: '3s' }}>{'{}'}</div>
-                      <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 text-pink-400 text-xs sm:text-sm animate-bounce-slow" style={{ animationDelay: '2s', animationDuration: '3s' }}>[]</div>
-                      <div className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 text-green-400 text-xs sm:text-sm animate-bounce-slow" style={{ animationDelay: '2.5s', animationDuration: '3s' }}>()</div>
                     </div>
                   </div>
                 </div>
