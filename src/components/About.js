@@ -131,7 +131,7 @@ const About = ({ darkMode }) => {
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                   <span className={`text-responsive-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                    <strong>Phone:</strong> +91 84490 12345
+                    <strong>Phone:</strong> +91 9119094811
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
