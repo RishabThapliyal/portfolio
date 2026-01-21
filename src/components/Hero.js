@@ -205,7 +205,7 @@ const Hero = ({ darkMode, language }) => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/rishabthapliyal"
+                href="https://www.linkedin.com/in/rishab-thapliyal-b72514221?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-3 sm:p-4 rounded-2xl transition-all duration-300 hover:scale-110 hover:rotate-3 glass-effect ${
