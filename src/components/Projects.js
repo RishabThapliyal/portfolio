@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Projects = ({ darkMode }) => {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [hoveredProject, setHoveredProject] = useState(null);
+  
 
   const projects = [
     {
