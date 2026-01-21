@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 const Projects = ({ darkMode }) => {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [hoveredProject, setHoveredProject] = useState(null);
 
   const projects = [
     {
@@ -179,8 +178,6 @@ const Projects = ({ darkMode }) => {
                   : 'bg-white/50 hover:bg-white/70 shadow-xl hover:shadow-2xl border border-gray-200/50 hover:border-blue-500/50'
               } glass-effect`}
               style={{ animationDelay: `${index * 0.1}s` }}
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Project Image */}
               <div className={`relative h-40 sm:h-48 flex items-center justify-center text-4xl sm:text-5xl md:text-6xl transition-all duration-500 group-hover:scale-110 ${
@@ -323,4 +320,4 @@ const Projects = ({ darkMode }) => {
   );
 };
 
-export default Projects; 
+export default Projects;
